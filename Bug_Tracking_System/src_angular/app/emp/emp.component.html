@@ -1,0 +1,122 @@
+<div class="container">
+    <div class="col-sm-3"></div>
+    <form #empForm="ngForm" (ngSubmit)="onAddEmployee(empForm)" >
+        <div class="col-sm-6">
+           <h2 align="center" style="color: black;">Register Employee</h2>
+            <div class="form-group">
+                <label for="id">Login ID:</label>
+                <input type="email" id="id" class="form-control" name="mail_id" ngModel required #mail_id="ngModel">
+                <div *ngIf="!mail_id.valid && mail_id.touched"> 
+                        <span class="text-danger" *ngIf="mail_id.errors.required">Login ID is Required...</span>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label for="pa">Password:</label>
+                <input type="password" id="pa" class="form-control" name="password" ngModel required minlength="8" maxlength="15" pattern="^[A-Z][a-zA-Z]+[@-]+[0-9]+" #password="ngModel">
+                <div *ngIf="!password.valid && password.touched"> 
+                        <span class="text-danger" *ngIf="password.errors.required">Password is Required...</span>
+                        <span class="text-danger" *ngIf="password.errors.minlength">Min {{ password.errors.minlength.requiredLength }} characters are required..</span>
+                        <span class="text-danger" *ngIf="password.errors.maxlength">Max x characters are allowed..</span>
+                        <span class="text-danger" *ngIf="password.errors.pattern">Special Characters(@/-) are allowed only...</span>
+                </div>
+            </div>
+
+            <div class ="form-group">
+                <label for="etype">Employee Type:</label>
+                <input type="radio" name="typeid" ngModel #typeid="ngModel" value="102">Manager
+                <input type="radio" name="typeid" ngModel #typeid="ngModel" value="103">Developer
+                <input type="radio" name="typeid" ngModel #typeid="ngModel" value="104">Tester
+            </div>
+    
+            <div class="form-group">
+                <label for="fn">First Name:</label>
+                <input type="text" id="fn" class="form-control" name="fname" ngModel required pattern="[a-zA-Z]{3,12}" #fname="ngModel">
+                <div *ngIf="!fname.valid && fname.touched"> 
+                        <span class="text-danger" *ngIf="fname.errors.required">First name is Required...</span>
+                        <span class="text-danger" *ngIf="fname.errors.pattern">Only alphabets are allowed...</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ln">Last Name:</label>
+                <input type="text" id="ln" class="form-control" name="lname" ngModel required pattern="[a-zA-Z]{3,12}" #lname="ngModel">
+                <div *ngIf="!lname.valid && lname.touched"> 
+                        <span class="text-danger" *ngIf="lname.errors.required">Last name is Required...</span>
+                        <span class="text-danger" *ngIf="lname.errors.pattern">Only alphabets are allowed...</span>
+                </div>
+            </div>
+      
+           <div class="form-group">
+              <label for="db">Date of Birth:</label>
+              <input type="date" id="db" class="form-control" name="dob" ngModel required #salary="ngModel">
+              <div *ngIf="!dob.valid && dob.touched"> 
+                    <span class="text-danger" *ngIf="dob.errors.required">Date of Birth is Required...</span>
+              </div>
+           </div>
+        
+           <div class="form-group">
+                <label for="hn">House Number:</label>
+                <input type="text" id="hn" class="form-control" name="housenum" ngModel required #housenum="ngModel">
+                <div *ngIf="!housenum.valid && housenum.touched"> 
+                    <span class="text-danger" *ngIf="housenum.errors.required">House Number is Required...</span>
+                </div>
+            </div>
+        
+           <div class="form-group">
+                <label for="sen">Street Name:</label>
+                <input type="text" id="sen" class="form-control" name="street" ngModel required pattern="^[a-zA-Z]{3,15}" #street="ngModel">
+                <div *ngIf="!street.valid && street.touched"> 
+                    <span class="text-danger" *ngIf="street.errors.required">Street name is Required...</span>
+                    <span class="text-danger" *ngIf="street.errors.pattern">Only alphabets are allowed...</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="st">State Name:</label>
+                <input type="text" id="st" class="form-control" name="state" ngModel #state="ngModel">
+            </div>
+          
+            <div class="form-group">
+                <label for="cn">Country Name:</label>
+                <input type="text" id="cn" class="form-control" name="country" ngModel #country="ngModel">
+            </div>
+        
+            <div class="form-group">
+                <label for="pc">Pin Code:</label>
+                <input type="text" id="pc" class="form-control" name="pincode" ngModel #pincode="ngModel">
+            </div>
+            
+            <div class="form-group">
+                <label for="con">Contact Number:</label>
+                <input type="text" id="con" class="form-control" name="contact_num" ngModel #contact_num="ngModel">
+            </div>
+
+            <div class="form-group">
+                <label for="sq">Security Question:</label>
+                <input type="text" id="sq" class="form-control" name="ques_id" value="ques_id" ngModel #ques_id="ngModel">
+            </div>
+              
+            <div class="form-group">
+                <label for="sqa">Security Question Answer:</label>
+                <input type="text" id="sqa" class="form-control" name="security_quesans" ngModel #security_quesans="ngModel">
+            </div>
+
+            <div class="form-group">
+                <label for="rd">Registration Date:</label>
+                <input type="date" id="rd" class="form-control" name="reg_date" ngModel #reg_date="ngModel">
+            </div>
+            
+            <div class="form-group col-xs-6 text-left">
+                    <input type="reset" class="btn btn-primary active" value="Reset">
+            </div>
+
+            <div class="form-group col-xs-6 text-right">
+                <input type="submit" class="btn btn-primary active" value="Register">
+            </div>
+
+            
+        </div>
+    </form>
+    <div class="col-sm-3"></div>
+</div>

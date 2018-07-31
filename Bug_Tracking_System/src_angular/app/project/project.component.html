@@ -1,0 +1,63 @@
+<div>
+  <form #empForm="ngForm" (ngSubmit)="onAddProject(projForm)" >
+  <div class="container">
+      <div class="col-sm-8">
+      <h2 align="center" style="color: black;">Register Project</h2>
+      
+    
+      <div class="form-group">
+          <label for="pid">Project ID:</label>
+          <input type="text" id="pid" class="form-control"
+                        name="project_id"
+                        ngModel
+                        #project_id="ngModel">
+        </div>
+      
+        <div class="form-group">
+          <label for="pn">Project Name:</label>
+          <input type="text" id="pn" class="form-control"
+                    name="project_name"
+                    ngModel 
+                    #project_name="ngModel">
+        </div>
+      
+        <div class="form-group">
+          <label for="sd">Start Date:</label>
+          <input type="date" id="sd" class="form-control"
+                    name="start_date"
+                    ngModel 
+                    #start_date="ngModel">
+        </div>
+  
+        <div class="form-group">
+            <label for="ed">End Date:</label>
+            <input type="date" id="ed" class="form-control"
+                        name="end_date"
+                        ngModel
+                        #end_date="ngModel">
+          </div>
+        
+          <div class="form-group">
+            <label for="ps">Project Status:</label>
+            <input type="text" id="ps" class="form-control"
+                      name="project_status"
+                      ngModel 
+                      #project_status="ngModel">
+          </div>
+          <div class="form-group">
+              <label for="mi">Manager Id:</label>
+              <input type="text" id="mi" class="form-control"
+                          name="manager_id"
+                          ngModel
+                          #manager_id="ngModel">
+            </div>   
+              
+    <div class="form-group">
+      <input type="submit" class="btn btn-primary active" value="Register">
+      </div>
+  
+      <div class="form-group">
+          <input type="reset" class="btn btn-primary active" value="Reset">
+          </div>
+  </div></div></form>
+  </div>
