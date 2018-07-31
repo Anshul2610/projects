@@ -1,0 +1,71 @@
+<html>
+<head><title>OUR TEAM</title></head>
+<body>
+<div style="width:50%; height:450px; margin:50px auto;  ">
+		<img id="imgs" src="b1.jpg" width="100%" height="100%" />  
+	</div>
+
+<script>
+		var a=["b1.jpg","b2.jpg"];
+		var i=1,myImage,j=a.length-1;
+		myImage=document.getElementById("imgs");
+
+		function next(){
+    if(i>=a.length){
+        i=0;        
+    }
+    //myImage.setAttribute("src",a[i]);
+    myImage.src=a[i];
+    j=i-1;
+    i++;
+}
+
+function prev(){
+    if(j<0){
+        j=a.length-1;
+    }
+    //myImage.setAttribute("src",a[j]);
+    myImage.src=a[j];
+    i=j+1; 
+    j--;
+}
+		
+    		var b=setInterval(next,2200);
+</script>
+<style>
+	.intro >h4{float:left;
+			width:25%; 
+			text-align:center;
+			postion: relative;
+			font-size:25px;
+			margin: 5px auto;
+		}
+	.intro1 >h6{float:left;
+			width:25%; 
+			text-align:center;
+			postion: relative;
+			font-size:20px;
+			margin: 5px auto;
+			color:black;
+		}
+	.intro{width:100%;}
+	h2{text-align:center; padding: 10 auto; margin: 20px; font-size:50px;}
+</style>
+	<h2>MEMBERS</h2><hr/>
+	<div class="intro">
+			<h4>NAME</h4>
+			<h4>CONTACT</h4>
+			<h4>EMAIL</h4>
+			<h4>DESIGNATION</h4>
+	</div><hr/>
+	<div class="intro1">
+			<h6>SHIVANGI BHASIN</h6>
+			<h6>7060788546</h6>
+			<h6>shivangi.1513093@kiet.edu</h6>
+			<h6>B.TECH IT</h6><hr/>
+			<h6>ANSHUL GUPTA</h6>
+			<h6>7217490347</h6>
+			<h6>anshul.1513021@kiet.edu</h6>
+			<h6>B.TECH IT</h6>
+	</div><hr/>
+</body>    

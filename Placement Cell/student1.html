@@ -1,0 +1,81 @@
+<html>
+<head>
+<title>Student</title>
+</head>
+<style>	
+	*{padding:0; margin:0;}
+	body{font:normal 200%/1.3em sans-serif; color:#333; background-color:#fff;}
+	h1{font-size:1.4em;	text-align:center; font-weight:normal; margin-bottom:4px;}
+	fieldset{padding: 0.5em 1em; border: 2px solid #999; border-radius: 6px;}
+	legend{padding: 0 0.5em; color: #999;}
+	label{clear:both; float:left; width:40%; text-align:right; margin:0 2% 10px 0; color:#666;}
+	input, button{float:left; width:10em; font-size:1em; padding:2px 6px;}
+	button{clear:both; margin-left:42.4%;}
+	#strength{float:left; font-weight:bold;	margin-left:2%;	color:#999;}
+</style>
+<body>
+<article>
+	<form id="register" action="register" method="post">
+
+		<fieldset>
+			<legend>STUDENT</legend>
+		
+			<!-- email -->
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" autofocus required />
+			<br/>
+			
+			<button type="submit">LOGIN</button>
+		
+		</fieldset>
+	</article>		
+	</form>
+<script>
+
+// DOM nodes
+var form = {
+	register:	document.getElementById("register"),
+	email:		document.getElementById("email"),
+};
+
+
+// form submit
+form.register.addEventListener( "submit", CheckForm );
+
+
+// check email field
+form.email.addEventListener( "change", function(e) {
+	if (e.target.value == "") alert("You forgot the email!");
+} );
+
+
+
+
+// form submit validation
+var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+function CheckForm(e) {
+
+	var msg = "";
+
+	// check email
+	if (!reEmail.test(form.email.value)) {
+		msg += "\nyour email address";
+	}
+
+	// complete message
+	if (msg != "") {
+		msg = "Please check:"+msg;
+	}
+	else {
+		msg = "Form is valid!\nSubmitting...";
+	}
+
+	alert(msg);
+
+	e.preventDefault();
+
+}	
+
+</script>
+</body>
+</html>

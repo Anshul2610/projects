@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ADMIN LOGIN</title>
+<style>
+	*{padding:0; margin:0;}
+body{font:normal 200%/1.3em sans-serif; color:#333; background-color:#fff;}
+header, article{display:block; margin:10px;}
+header{padding:6px; color:#fff;	background-color:#666; border:3px double #fff;}
+h1{font-size:1.4em;	text-align:center; font-weight:normal; margin-bottom:4px;}
+fieldset{padding: 0.5em 1em; border: 2px solid #999; border-radius: 6px;}
+legend{padding: 0 0.5em; color: #999;}
+label{clear:both; float:left; width:40%; text-align:right; margin:0 2% 10px 0; color:#666;}
+input, button{float:left; width:10em; font-size:1em; padding:2px 6px;}
+button{clear:both; margin-left:42.4%;}
+#strength{float:left; font-weight:bold;	margin-left:2%;	color:#999;}
+</style>
+</head>
+<body>
+
+<header>
+	<h1>ADMIN LOGIN</h1>
+</header>
+
+<article>
+
+	<!-- registration form -->
+	<form id="register" action="register" method="post">
+
+		<fieldset>
+			<legend>Admin</legend>
+		
+			<!-- email -->
+			<label for="email">Email:</label>
+			<input type="email" id="email" name="email" autofocus required />
+
+			<!-- passwords -->
+			<label for="pass1">Password:</label>
+			<input type="password" id="pass1" name="pass1" required />
+			<span id="strength"></span>
+			
+			<label for="pass2">Re-type Password:</label>
+			<input type="password" id="pass2" name="pass2" required />
+
+			<button type="submit">Login</button>
+		
+		</fieldset>
+		
+	</form>
+
+</article>
+
+<script>
+
+// DOM nodes
+var form = {
+	register:	document.getElementById("register"),
+	email:		document.getElementById("email"),
+	pass1:		document.getElementById("pass1"),
+	pass2:		document.getElementById("pass2"),
+	strength:	document.getElementById("strength")
+};
+
+
+// form submit
+form.register.addEventListener( "submit", CheckForm );
+
+
+// check email field
+form.email.addEventListener( "change", function(e) {
+	if (e.target.value == "") alert("You forgot the email!");
+} );
+
+
+// stop space character
+form.pass1.addEventListener( "keypress", NoSpaces );
+form.pass2.addEventListener( "keypress", NoSpaces );
+
+
+// password strength
+form.pass1.addEventListener( "keyup", PasswordStrength );
+
+
+// stop spaces being entered
+function NoSpaces(e) {
+	if (e.charCode == 32) e.preventDefault();
+}
+
+
+// check password strength
+var strtext = ["weak", "average", "strong"];
+var strcolor = ["#c00", "#f80", "#080"];
+function PasswordStrength(e) {
+
+	var pass = form.pass1.value;
+
+	// count uppercase
+	var uc = pass.match(/[A-Z]/g);
+	uc = (uc && uc.length || 0);
+
+	// count numbers
+	var nm = pass.match(/\d/g);
+	nm = (nm && nm.length || 0);
+
+	// count symbols
+	var nw = pass.match(/\W/g);
+	nw = (nw && nw.length || 0);
+
+	// determine strength
+	var s = pass.length + uc + (nm * 2) + (nw * 3);
+	s = Math.min(Math.floor(s / 10), 2);
+
+	form.strength.textContent = strtext[s];
+	form.strength.style.color = strcolor[s];
+
+}
+
+
+// form submit validation
+var reEmail = /^[a-z0-9._%-]+@[a-z0-9.-]+\.[a-z]{2,4}$/;
+function CheckForm(e) {
+
+	var msg = "";
+
+	// check email
+	if (!reEmail.test(form.email.value)) {
+		msg += "\nyour email address";
+	}
+
+	// check passwords
+	if (form.pass1.value == "" || form.pass1.value != form.pass2.value) {
+		msg += "\nyour passwords";
+	}
+
+	// complete message
+	if (msg != "") {
+		msg = "Please check:"+msg;
+	}
+	else {
+		msg = "Form is valid!\nSubmitting...";
+	}
+
+	alert(msg);
+
+	e.preventDefault();
+
+}	
+
+</script>
+
+</body>
+</html>

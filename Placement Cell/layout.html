@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Training and Placement Cell</title>
+	<style>
+		*{margin: 40 auto; padding: 0 auto;}
+		section{
+			margin: 30px;
+			text-align:left;
+			font-size: 18px;}
+		.intro{
+			height: 650px;
+			background-color: white;
+			
+		}
+		a1{font-size:40px;}
+		.intro>nav{
+			width: 95%;
+			padding-left: 50px;
+			box-sizing: border-box;
+		}
+		.intro .logo{
+			font-size: 60px;
+			font-weight: bold;
+			font-family: cursive;
+			color: black;
+			text-align: center;
+			text-decoration: none;
+			float: left;
+			display: inline-block;
+		}
+
+		.intro .menu{
+			border:1px solid black;
+			list-style-type: none;
+			padding: 0;
+			float: right;
+			width: 100%;
+		}
+		.intro .menu>li{
+			float: left;
+			width:16.66%;
+			text-align: center;
+			position: relative;
+		}
+
+		.intro .menu>li a{
+			text-decoration: none;
+			color: black;
+			font-size:24px;
+			font-family: monospace;
+			line-height: 50px;
+			display: block;
+		}
+		.intro .menu a:hover{
+			background-color: #ccc;
+			color: black;
+		}
+
+		.intro .menulist{
+			list-style-type: none;
+			padding: 0;
+			position: absolute;
+			width: 100%;
+			background-color: grey;
+			display: none;
+		}
+		
+		.intro .menu>li .menulist a{
+			font-size: 18px;
+		}
+
+		.intro .menu>li:hover .menulist{
+			display: block;
+		}
+		
+		.intro .menulist1{
+			list-style-type: none;
+			padding: 0;
+			position: absolute;
+			width: 100%;
+			background-color: grey;
+			display: none;
+		}
+		
+		.intro .menu>li .menulist1 a{
+			font-size: 18px;
+		}
+
+		.intro .menu>li:hover .menulist1{
+			display: block;
+		}
+		img{float:left;}
+		h1{font-size: 65px;color: white;}
+		body{background-image: url("bg.jpg");}
+
+		.clearfix{display: block; clear: both;}
+	</style>
+</head>
+<body>
+<main>
+	
+		
+	<img src="logo.png" alt="logo" />
+	<h1>TRAINING AND PLACEMENT CELL</h1>
+	
+	<div style="width:100%; height:350px;  ">
+		<img id="imgs" src="a1.jpg" width="100%" height="100%" />  
+	</div>
+	<script>
+		var a=["a1.jpg","a2.jpg","a3.jpg"];
+		var i=1,myImage,j=a.length-1;
+		myImage=document.getElementById("imgs");
+
+		function next(){
+    if(i>=a.length){
+        i=0;        
+    }
+    //myImage.setAttribute("src",a[i]);
+    myImage.src=a[i];
+    j=i-1;
+    i++;
+}
+
+function prev(){
+    if(j<0){
+        j=a.length-1;
+    }
+    //myImage.setAttribute("src",a[j]);
+    myImage.src=a[j];
+    i=j+1; 
+    j--;
+}
+		
+    		var b=setInterval(next,2200);
+    		
+    
+	</script>
+    
+		
+					
+	<div class="intro">
+		<nav>
+			
+			<ul class="menu">
+				<li><a href="layout.html">HOME</a></li>
+				<li><a href="javascript: void 0;">ABOUT US</a>
+				
+				<ul class="menulist">
+					<li><a href="OUR TEAM1.html">OUR TEAM</a></li>
+					<li><a href="#">PLACEMENT RECORD</a></li>
+				</ul>
+
+				</li>
+				<li><a href="#">TRAINING</a></li>
+				<li><a href="companies.html">COMPANIES</a></li>
+				<li><a href="javascript: void 0;">SIGN IN</a>
+				<ul class="menulist1">
+					<li><a href="admin.html">ADMIN</a></li>
+					<li><a href="student.html">USER</a></li>
+				</ul></li>
+				<li><a href="Contact Us.html">CONTACT US</a></li>
+			</ul>
+			<span class="clearfix"></span>
+		</nav>
+
+
+		<section>Campus placement or campus interview is the program conducted within educational institutes or in a common place to provide jobs to students pursuing or in the stage of completing the programme. In this programme, industries visit the colleges to select students depending on their ability to work, capability, focus and aim.
+			            Companies recruit students to do their academic project in the interiors industrial environment.
+				<br/><br/><a1>Objective</a1><br/>The major objective of campus placement is to identify the talented and qualified professionals before they complete their education. It provide employment opportunities to the students who are perusing or in the final stage of completing the course. This process reduces the time for an industry to pick the candidates according to their need.It is a cumbersome activity and hence majority of the companies find it difficult to trace the right talent. Many students do not understand the importance of placement training that is being imparted, whether it is an aptitude training or soft skills. They show the least interest in this due to various factors viz., projects, assignments or more of activities loaded by the colleges as part of their curriculum thinking that it is not useful. It is the responsibility of the companies training on placement to make the students equipped on all aspects of career development along with creating a very good impact in them which makes them feel every minute they spend in the placement training session is worth being there and will help them in getting placed in their dream companies.	
+
+
+		</section>
+	</div>
+
+
+</main>
+</body>
+</html>

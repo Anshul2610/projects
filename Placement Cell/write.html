@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+		<meta charset="UTF-8" />
+		<meta name=viewport content="width=device-width, initial-scale=1">
+		<title>SITE TITLE</title>
+		<link rel="stylesheet" href="style.processed.css" />
+</head>
+
+<body>
+		<header role="banner">
+				<h1>Admin Panel</h1>
+				<ul class="utilities">
+						<li class="users"><a href="#">My Account</a></li>
+						<li class="logout warn"><a href="">Log Out</a></li>
+				</ul>
+		</header>
+
+		<nav role="navigation">
+				<ul class="main">
+						<li class="dashboard"><a href="index.html">Dashboard</a></li>
+						<li class="write"><a href="write.html">Write Post</a></li>
+						<li class="edit"><a href="manage-posts.html">Edit Posts</a></li>
+						<li class="comments"><a href="manage-comments.html">Comments</a></li>
+						<li class="users"><a href="manage-users.html">Manage Users</a></li>
+				</ul>
+		</nav>
+
+		<main role="main">
+				<section class="panel important">
+						<h2>Write a post</h2>
+						<form action="#">
+								<div class="twothirds">
+										<label for="title">Title:</label>
+										<input type="text" name="title" id="title" placeholder="Title of post" />
+
+										<label for="body">Body:</label>
+										<textarea cols="40" rows="8" name="body" id="body"></textarea>
+
+								</div>
+								<div class="onethird">
+										<legend>Radio Button Choice</legend>
+
+										<label for="radio-choice-1">
+											<input type="radio" name="radio-choice" id="radio-choice-1" value="choice-1" /> Choice 1
+										</label>
+
+										<label for="radio-choice-2">
+											<input type="radio" name="radio-choice" id="radio-choice-2" value="choice-2" /> Choice 2
+										</label>
+
+
+										<label for="select-choice">Select Dropdown Choice:</label>
+										<select name="select-choice" id="select-choice">
+											<option value="Choice 1">Choice 1</option>
+											<option value="Choice 2">Choice 2</option>
+											<option value="Choice 3">Choice 3</option>
+										</select>
+
+
+										<label for="checkbox">
+												<input type="checkbox" name="checkbox" id="checkbox" /> Checkbox
+											</label>
+
+
+										<input type="submit" value="Submit" />
+
+								</div>
+						</form>
+				</section>
+
+		</main>
+		<footer role="contentinfo">Easy Admin Style by Melissa Cabral</footer>
+</body>
+
+</html>
